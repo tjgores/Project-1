@@ -18,6 +18,19 @@ if the square shows a different image then both images disappear and the player 
 
 a message will display when all sqaures are matched to their pair
 
+a button will offer to reset the game
+
 styling will be minimal
 
+stretch goals:
+1) vibrating a match
+2) tracking correct answers
+
 */
+
+/*
+PSEUDOCODE
+
+
+*/
+const cardFaces = document.querySelectorAll(".card");
