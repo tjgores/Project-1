@@ -34,3 +34,10 @@ PSEUDOCODE
 
 */
 const cardFaces = document.querySelectorAll(".card");
+
+let pickedCard = false;
+let cardOne, cardTwo;
+
+function pickCard() {
+    
+}
