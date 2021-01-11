@@ -1,0 +1,137 @@
+body {
+    background: lightslategray;
+}
+
+.gameboard {
+    width: 818px;
+    margin: 20px auto;
+    height: 818px;
+    display: grid;
+    grid-gap: 6px;
+    grid-template-rows: 200px 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px 200px;
+}
+
+#button{
+    margin: auto;
+    padding: auto;
+}
+
+.reset{
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    background: lightgray;
+    display: grid;
+    text-align: center;
+    font-size: 40px;
+}
+
+.card {
+    background: #e9e4e4;
+}
+
+.one {
+    background: white;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.two {
+    background: white;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.three {
+    background: white;
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.four {
+    background: white;
+    grid-row: 1;
+    grid-column: 4;
+}
+
+.five {
+    background: white;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.six {
+    background: white;
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.seven {
+    background: white;
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.eight {
+    background: white;
+    grid-row: 2;
+    grid-column: 4;
+    
+}
+
+.nine {
+    background: white;
+    grid-row: 3;
+    grid-column: 1;
+
+}
+
+.ten {
+    background: white;
+    grid-row: 3;
+    grid-column: 2;
+
+}
+
+.eleven {
+    background: white;
+    grid-row: 3;
+    grid-column: 3;
+
+}
+
+.twelve {
+    background: white;
+    grid-row: 3;
+    grid-column: 4;
+
+}
+
+.thirteen {
+    background: white;
+    grid-row: 4;
+    grid-column: 1;
+
+}
+
+.fourteen {
+    background: white;
+    grid-row: 4;
+    grid-column: 2;
+
+}
+
+.fifteen {
+    background: white;
+    grid-row: 4;
+    grid-column: 3;
+
+}
+
+.sixteen {
+    background: white;
+    grid-row: 4;
+    grid-column: 4;
+
+}
