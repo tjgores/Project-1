@@ -41,7 +41,7 @@ let cardsLocked = false;
 
 function pickCard() {
     if (cardsLocked) return;
-
+    if (this === cardOne) return;
     console.log ("card was clicked");
     console.log(this);
         this.classList.toggle("flip");
@@ -86,6 +86,11 @@ function reflipCard() {
     cardTwo.classList.remove("flip");
     cardsLocked = false;
     }, 1500);
+}
+
+function boardReset() {
+    [pickedCard, boardReset] = [false, false];
+    [cardOne, cardTwo] = [null, nnull];
 }
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
