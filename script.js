@@ -47,6 +47,7 @@ function pickCard() {
         this.classList.toggle("flip");
         if (!pickedCard) {
             // if !pickedCard = false then this is the 1st click on it
+            // and pickedCard is switched to false here
             pickedCard = true;
             cardOne = this;
             // console.log({pickedCard, cardOne, pickedCard});
@@ -63,7 +64,8 @@ function pickCard() {
 }
 
 function matchTest() {
-// matched cards test
+// matched cards test. data attribute "name" defined on line 13 in html
+// reference for data attribute extraction was obtained from the 
 if (cardOne.dataset.name === cardTwo.dataset.name) {
     cardsUsed();
  } else {
@@ -79,11 +81,12 @@ function cardsUsed() {
     boardReset();
 }
 
-// 
+// When the picked cards are not a match. This is called in the matchTest
+// function in that function's else statement. The purpose is to flip the
+// cards over again if the two that were picked did not match. 
 function reflipCard() {
     cardsLocked = true;
     setTimeout(() => {
-    // not a match case
     cardOne.classList.remove("flip");
     cardTwo.classList.remove("flip");
     boardReset();
@@ -97,10 +100,10 @@ function boardReset() {
     [cardOne, cardTwo] = [null, null];
 }
 
-// reordering the cards in a separate function which is wrapped in an outer set 
+// Reordering the cards in a separate function which is wrapped in an outer set 
 // of parentheses with another set of parentheses right after that, making it
 // an Immediatley Invoked Function Expression (IIFE), which is executed as
-// soon as it is defined
+// soon as it is defined without calling it elsewhere
 (function cardsReorder () {
     cardFaces.forEach(card => {
         let unorderCards = Math.floor(Math.random() * 15)
