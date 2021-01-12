@@ -106,3 +106,10 @@ function boardReset() {
 })();
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
+
+// Resetting the game with the "reset" button. Note: this does not keep
+// score but only reloads the website
+let reset = document.querySelector(".reset");
+reset.addEventListener("click", function() {
+location.reload();
+})
