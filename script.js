@@ -79,6 +79,7 @@ function cardsUsed() {
     boardReset();
 }
 
+// 
 function reflipCard() {
     cardsLocked = true;
     setTimeout(() => {
@@ -89,6 +90,8 @@ function reflipCard() {
     }, 1500);
 }
 
+// using ES6 Destructuring Assignment to set the previously delared constants
+// to valus that will reset the board to a state where no cards have been picked
 function boardReset() {
     [pickedCard, cardsLocked] = [false, false];
     [cardOne, cardTwo] = [null, null];
