@@ -33,6 +33,9 @@ PSEUDOCODE
 
 
 */
+// Game strategy was inspired by the tutorial presented in the
+// video: https://www.youtube.com/watch?v=ZniVgo8U7ek. 
+
 const cardFaces = document.querySelectorAll(".card");
 
 let pickedCard = false;
@@ -111,11 +114,22 @@ function boardReset() {
     });
 })();
 
+// Using the .forEach command to loop through the list of the html class
+// "card" elements which were stored within the constant "card" which
+// was defined in the first line of code. Then using the addEventListener
+// to listen for a "click" and then execute the "pickCard" function.
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
 
 // Resetting the game with the "reset" button. Note: this does not keep
-// score but only reloads the website
+// score but only reloads the website with the location.reload command.
+// The precious data is lost.
 let reset = document.querySelector(".reset");
 reset.addEventListener("click", function() {
 location.reload();
 })
+
+function win () {
+if (cardOne.classList("") === "flip" && cardTwo.classList("") === "flip") {
+    console.log("win");
+    }
+}
