@@ -44,11 +44,16 @@ function pickCard() {
         this.classList.toggle("flip");
         if (!pickedCard) {
             // if !pickedCard = false then this is the 1st click on it
-         pickedCard = true;
-         cardOne = this;
- 
-         console.log({pickedCard, cardOne});
-     }
+            pickedCard = true;
+            cardOne = this;
+            console.log({pickedCard, cardOne, pickedCard});
+        } else {
+            // card clicked for second time
+            pickedCard = false;
+            cardTwo = this;
+            console.log({cardOne, cardTwo, pickedCard});
+        }  
+
 }
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
