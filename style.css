@@ -3,6 +3,10 @@
     margin: 2px;
     box-sizing: border-box;
 }
+#button{
+    margin: auto;
+    padding: auto;
+}
 
 body {
     height: 100vh;
