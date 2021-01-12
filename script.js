@@ -39,16 +39,16 @@ let pickedCard = false;
 let cardOne, cardTwo;
 
 function pickCard() {
-    // console.log ("card was clicked");
-    // console.log(this);
+    console.log ("card was clicked");
+    console.log(this);
         this.classList.toggle("flip");
-    //     if (!pickedCard) {
-    //         // if !pickedCard = false then this is the 1st click on it
-    //      pickedCard = true;
-    //      cardOne = this;
+        if (!pickedCard) {
+            // if !pickedCard = false then this is the 1st click on it
+         pickedCard = true;
+         cardOne = this;
  
-    //      console.log({pickedCard, cardOne});
-    //  }
+         console.log({pickedCard, cardOne});
+     }
 }
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
