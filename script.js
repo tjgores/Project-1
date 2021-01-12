@@ -94,10 +94,11 @@ function boardReset() {
     [cardOne, cardTwo] = [null, null];
 }
 
-function cardsReorder () {
+(function cardsReorder () {
     cardFaces.forEach(card => {
         let unorderCards = Math.floor(Math.random() * 15)
+        card.style.order = unorderCards;
     });
-}
+})();
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
