@@ -75,7 +75,9 @@ if (cardOne.dataset.name === cardTwo.dataset.name) {
 function cardsUsed() {
     // not reflipping a matched pair
     cardOne.removeEventListener("click", pickCard);
-    cardTwo.removeEventListener("click", pickCard); 
+    cardTwo.removeEventListener("click", pickCard);
+
+    boardReset();
 }
 
 function reflipCard() {
@@ -84,7 +86,7 @@ function reflipCard() {
     // not a match case
     cardOne.classList.remove("flip");
     cardTwo.classList.remove("flip");
-    cardsLocked = false;
+    boardReset();
     }, 1500);
 }
 
