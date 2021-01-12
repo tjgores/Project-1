@@ -46,15 +46,22 @@ function pickCard() {
             // if !pickedCard = false then this is the 1st click on it
             pickedCard = true;
             cardOne = this;
-            console.log({pickedCard, cardOne, pickedCard});
+            // console.log({pickedCard, cardOne, pickedCard});
         } else {
             // card clicked for second time
             pickedCard = false;
             cardTwo = this;
             console.log({cardOne, cardTwo, pickedCard});
             // matching card test
-            console.log(cardOne.dataset.name);
-            console.log(cardTwo.dataset.name);
+            // console.log(cardOne.dataset.name);
+            // console.log(cardTwo.dataset.name);
+
+            // matched cards test
+            if (cardOne.dataset.name === cardTwo.dataset.name) {
+               cardOne.removeEventListener("click," pickCard);
+               cardTwo.removeEventListener("click," pickCard); 
+            }
+            
         }  
 }
 
