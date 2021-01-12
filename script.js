@@ -94,6 +94,10 @@ function boardReset() {
     [cardOne, cardTwo] = [null, null];
 }
 
+// reordering the cards in a separate function which is wrapped in an outer set 
+// of parentheses with another set of parentheses right after that, making it
+// an Immediatley Invoked Function Expression (IIFE), which is executed as
+// soon as it is defined
 (function cardsReorder () {
     cardFaces.forEach(card => {
         let unorderCards = Math.floor(Math.random() * 15)
