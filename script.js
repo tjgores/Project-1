@@ -37,8 +37,11 @@ const cardFaces = document.querySelectorAll(".card");
 
 let pickedCard = false;
 let cardOne, cardTwo;
+let cardsLocked = false;
 
 function pickCard() {
+    if (cardsLocked) return;
+
     console.log ("card was clicked");
     console.log(this);
         this.classList.toggle("flip");
@@ -70,15 +73,18 @@ if (cardOne.dataset.name === cardTwo.dataset.name) {
 }
 
 function cardsUsed() {
+    // not reflipping a matched pair
     cardOne.removeEventListener("click", pickCard);
     cardTwo.removeEventListener("click", pickCard); 
 }
 
 function reflipCard() {
+    cardsLocked = true;
     setTimeout(() => {
     // not a match case
     cardOne.classList.remove("flip");
     cardTwo.classList.remove("flip");
+    cardsLocked = false;
     }, 1500);
 }
 
