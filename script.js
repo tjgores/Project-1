@@ -90,7 +90,7 @@ function reflipCard() {
 
 function boardReset() {
     [pickedCard, boardReset] = [false, false];
-    [cardOne, cardTwo] = [null, nnull];
+    [cardOne, cardTwo] = [null, null];
 }
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
