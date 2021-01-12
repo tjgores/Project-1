@@ -39,5 +39,15 @@ let pickedCard = false;
 let cardOne, cardTwo;
 
 function pickCard() {
-    
+    console.log ("card was clicked");
+    console.log(this);
+        this.classlist.toggle("picked");
+    // if (!pickedCard) {
+    //     pickedCard = true;
+    //     cardOne = this;
+ 
+    //     console.log({pickedCard, cardOne});
+    // }
 }
+
+cardFaces.forEach(card => card.addEventListener("click", pickCard));
