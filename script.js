@@ -55,19 +55,21 @@ function pickCard() {
             // matching card test
             // console.log(cardOne.dataset.name);
             // console.log(cardTwo.dataset.name);
-
-            // matched cards test
-            if (cardOne.dataset.name === cardTwo.dataset.name) {
-               cardOne.removeEventListener("click", pickCard);
-               cardTwo.removeEventListener("click", pickCard); 
-            } else {
-                setTimeout(() => {
-                // not a match case
-                cardOne.classList.remove("flip");
-                cardTwo.classList.remove("flip");
-                }, 1500);
-            }
         }  
+}
+
+function matchTest() {
+// matched cards test
+if (cardOne.dataset.name === cardTwo.dataset.name) {
+    cardOne.removeEventListener("click", pickCard);
+    cardTwo.removeEventListener("click", pickCard); 
+ } else {
+     setTimeout(() => {
+     // not a match case
+     cardOne.classList.remove("flip");
+     cardTwo.classList.remove("flip");
+     }, 1500);
+ }
 }
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
