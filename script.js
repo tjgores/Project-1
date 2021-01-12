@@ -52,8 +52,10 @@ function pickCard() {
             pickedCard = false;
             cardTwo = this;
             console.log({cardOne, cardTwo, pickedCard});
+            // matching card test
+            console.log(cardOne.dataset.name);
+            console.log(cardTwo.dataset.name);
         }  
-
 }
 
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
