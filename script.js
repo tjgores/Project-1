@@ -52,7 +52,6 @@ function pickCard() {
             // console.log({pickedCard, cardOne, pickedCard});
         } else {
             // card clicked for second time
-            pickedCard = false;
             cardTwo = this;
             console.log({cardOne, cardTwo, pickedCard});
             // matching card test
@@ -91,7 +90,7 @@ function reflipCard() {
 }
 
 function boardReset() {
-    [pickedCard, boardReset] = [false, false];
+    [pickedCard, cardsLocked] = [false, false];
     [cardOne, cardTwo] = [null, null];
 }
 
