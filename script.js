@@ -79,7 +79,8 @@ function cardsUsed() {
 // When the picked cards are not a match. This is called in the matchTest
 // function in that function's else statement. The purpose is to flip the
 // cards over again if the two that were picked did not match. This is
-// achieved by removing the "flip" attribute from the classList element
+// achieved by removing the "flip" attribute from the classList element.
+// The setTimeout function delays the function's action (reflip) by 1500ms.
 function reflipCard() {
     cardsLocked = true;
     setTimeout(() => {
@@ -102,7 +103,7 @@ function boardReset() {
 
 // Reordering the cards in a separate function which is wrapped in an outer set 
 // of parentheses with another set of parentheses right after that, making it
-// an Immediatley Invoked Function Expression (IIFE), which is executed as
+// an Immediately Invoked Function Expression (IIFE), which is executed as
 // soon as it is defined without calling it elsewhere
 (function cardsReorder () {
     cardFaces.forEach(card => {
