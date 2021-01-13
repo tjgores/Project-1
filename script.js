@@ -104,7 +104,8 @@ function boardReset() {
 // Reordering the cards in a separate function which is wrapped in an outer set 
 // of parentheses with another set of parentheses right after that, making it
 // an Immediately Invoked Function Expression (IIFE), which is executed as
-// soon as it is defined without calling it elsewhere
+// soon as it is defined without calling it elsewhere. Source:
+// https://www.freecodecamp.org/news/iife-in-javascript-what/
 (function cardsReorder () {
     cardFaces.forEach(card => {
         let unorderCards = Math.floor(Math.random() * 15)
