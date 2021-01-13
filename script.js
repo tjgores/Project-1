@@ -36,24 +36,33 @@ PSEUDOCODE
 // Game strategy was inspired by the tutorial presented in the
 // video: https://www.youtube.com/watch?v=ZniVgo8U7ek by Marina Fereira
 
-// create a constant represetning a list of all card elements and store
-// it in in cardFaces using the "document.querySelectorAll" and inputing
-// the ".card" class.
+// create a constant representing a list of all HTML ".card" elements and
+// store it in cardFaces using the "document.querySelectorAll" and inputing
+// the data in the ".card" class.
 const cardFaces = document.querySelectorAll(".card");
 
+// Declaring constants 
 let pickedCard = false;
 let cardOne, cardTwo;
 let cardsLocked = false;
 
+// The "this" keyword value is dynamically set with respect to context.
+// Here, the "this" value represents the element that triggered the event
+// within the "cardFaces.forEach(card =>" loop which calls the pickCard
+// function with a "click" event listener on the card. 
 function pickCard() {
     if (cardsLocked) return;
     if (this === cardOne) return;
     console.log ("card was clicked");
-        // adding and toggling "flip" to the end of "cardOne.dataset.name"
+        // adding and toggling "flip" to the end of the HTML element
+        // "cardOne.dataset.name" 
         this.classList.toggle("flip");
         if (!pickedCard) {
-            // if !pickedCard = false then this is the 1st click on it
-            // and pickedCard is switched to false here
+            // If !pickedCard = false then this is the 1st click on it
+            // and pickedCard is switched to true here. The "!" in front
+            // of the "pickedCard" is saying that if the opposite of the
+            // default value ("true") is the value of the constant
+            //  "pickedCard", then set the constant to "true".
             pickedCard = true;
              // "this" is dynamically set according to the context.
              // In this case
@@ -72,11 +81,16 @@ function pickCard() {
         }  
 }
 
-function matchTest() {
 // Matched cards test. The DOM "dataset.property" reads the HTML "data-"
 // attribute from the HTML of the "name" defined on line 14 in HTML.
-// The reference on how to use "dataset" for data attribute extraction
-// is 
+// Test if the "name" attribute passed to cardOne is equal to the "name"
+// attribute passed to cardTwo. If true run function "cardsUsed", which 
+// prevents the cards from being fliped over to their unmatched state.
+// If false, run function "reflipCard" which flips cards over to their
+// unmatched state with the "neutral" image.
+// The reference on how to use "dataset" for data attribute extraction:
+// https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset
+function matchTest() {
 if (cardOne.dataset.name === cardTwo.dataset.name) {
     cardsUsed();
  } else {
@@ -84,8 +98,10 @@ if (cardOne.dataset.name === cardTwo.dataset.name) {
  }
 }
 
+// The cardsUsed function prevents reflipping a matched pair by removing
+// the "click" eventListener from the cardOne and cardTwo constants and
+// then exectuting the pickCard function again. 
 function cardsUsed() {
-    // not reflipping a matched pair
     cardOne.removeEventListener("click", pickCard);
     cardTwo.removeEventListener("click", pickCard);
 
@@ -94,7 +110,8 @@ function cardsUsed() {
 
 // When the picked cards are not a match. This is called in the matchTest
 // function in that function's else statement. The purpose is to flip the
-// cards over again if the two that were picked did not match. 
+// cards over again if the two that were picked did not match. This is
+// achieved by removing the "flip" attribute from the classList element
 function reflipCard() {
     cardsLocked = true;
     setTimeout(() => {
@@ -104,8 +121,8 @@ function reflipCard() {
     }, 1500);
 }
 
-// Using ES6 Destructuring Assignment to set the previously delared constants
-// to values that will reset the board to a state where no cards have been picked
+// Using ES6 Destructuring Assignment to set the previously declared constants
+// to values that will reset the board to a state where no cards have been picked.
 // "The destructuring assignment syntax is a JavaScript expression that makes
 // it possible to unpack values from arrays, or properties from objects, into
 // distinct variables." (source: https://developer.mozilla.org/en-US/docs/Web
@@ -127,9 +144,10 @@ function boardReset() {
 })();
 
 // Using the "".forEach" command to loop through the list of the html class
-// "card" elements which were stored within the constant "cardFaces" which
-// was defined in the first line of code. Then using the addEventListener
-// to listen for a "click" and then execute the "pickCard" function.
+// ".card" elements which were stored within the constant "cardFaces" which
+// was defined in the first line of code. Then attach (with "=>"") an event
+// listener with "addEventListener" to each of the cards and whenever that 
+// "click" event is heard then execute the "pickCard" function.
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
 
 // Resetting the game with the "reset" button. Note: this does not keep
@@ -140,6 +158,8 @@ reset.addEventListener("click", function() {
 location.reload();
 })
 
+// This function does not work. Intended to be the first part of a
+// "Win" statement after completing the game.
 function win () {
 if (document.querySelectorAll(cardOne.card === "flip")) {
     console.log("win");
