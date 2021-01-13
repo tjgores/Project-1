@@ -36,6 +36,9 @@ PSEUDOCODE
 // Game strategy was inspired by the tutorial presented in the
 // video: https://www.youtube.com/watch?v=ZniVgo8U7ek by Marina Fereira
 
+// create a constant represetning a list of all card elements and store
+// it in in cardFaces using the "document.querySelectorAll" and inputing
+// the ".card" class.
 const cardFaces = document.querySelectorAll(".card");
 
 let pickedCard = false;
@@ -123,8 +126,8 @@ function boardReset() {
     });
 })();
 
-// Using the .forEach command to loop through the list of the html class
-// "card" elements which were stored within the constant "card" which
+// Using the "".forEach" command to loop through the list of the html class
+// "card" elements which were stored within the constant "cardFaces" which
 // was defined in the first line of code. Then using the addEventListener
 // to listen for a "click" and then execute the "pickCard" function.
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
