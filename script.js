@@ -1,14 +1,8 @@
 
-
-/*
-PSEUDOCODE
-
-
-*/
 // Game strategy was inspired by the tutorial presented in the
 // video: https://www.youtube.com/watch?v=ZniVgo8U7ek by Marina Fereira
 
-// create a constant representing a list of all HTML ".card" elements and
+// Create a constant representing a list of all HTML ".card" elements and
 // store it in cardFaces using the "document.querySelectorAll" and inputing
 // the data in the ".card" class.
 const cardFaces = document.querySelectorAll(".card");
@@ -21,7 +15,11 @@ let cardsLocked = false;
 // The "this" keyword value is dynamically set with respect to context.
 // Here, the "this" value represents the element that triggered the event
 // within the "cardFaces.forEach(card =>" loop which calls the pickCard
-// function with a "click" event listener on the card. 
+// function with a "click" event listener on the card. "In an event,
+// "this" refers to the element that received the event." (source:
+// https://www.w3schools.com/js/js_this.asp). In this case the event is
+// the click referenced in the line of code below:
+// cardFaces.forEach(card => card.addEventListener("click", pickCard));
 function pickCard() {
     if (cardsLocked) return;
     if (this === cardOne) return;

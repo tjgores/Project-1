@@ -18,13 +18,13 @@ if this square shows the same animal then the match is made and the images remai
 
 if the square shows a different image then both images disappear and the player picks again
 
-a message will display when all sqaures are matched to their pair
+a message will display when all squares are matched to their pair
 
 a button will offer to reset the game
 
 styling will be minimal
 
 stretch goals:
-1) reordering the cards after each reset
+1) reordering the cards when the game is reset
 2) vibrating a match
 3) tracking correct answers
