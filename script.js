@@ -34,7 +34,7 @@ PSEUDOCODE
 
 */
 // Game strategy was inspired by the tutorial presented in the
-// video: https://www.youtube.com/watch?v=ZniVgo8U7ek. 
+// video: https://www.youtube.com/watch?v=ZniVgo8U7ek by Marina Fereira
 
 const cardFaces = document.querySelectorAll(".card");
 
@@ -46,14 +46,17 @@ function pickCard() {
     if (cardsLocked) return;
     if (this === cardOne) return;
     console.log ("card was clicked");
-    console.log(this);
+        // adding and toggling "flip" to the end of "cardOne.dataset.name"
         this.classList.toggle("flip");
         if (!pickedCard) {
             // if !pickedCard = false then this is the 1st click on it
             // and pickedCard is switched to false here
             pickedCard = true;
+             // "this" is dynamically set according to the context.
+             // In this case
+            console.log(this);
             cardOne = this;
-            // console.log({pickedCard, cardOne, pickedCard});
+            // console.log({pickedCard, cardOne});
         } else {
             // card clicked for second time
             cardTwo = this;
@@ -67,8 +70,10 @@ function pickCard() {
 }
 
 function matchTest() {
-// matched cards test. data attribute "name" defined on line 13 in html
-// reference for data attribute extraction was obtained from the 
+// Matched cards test. The DOM "dataset.property" reads the HTML "data-"
+// attribute from the HTML of the "name" defined on line 14 in HTML.
+// The reference on how to use "dataset" for data attribute extraction
+// is 
 if (cardOne.dataset.name === cardTwo.dataset.name) {
     cardsUsed();
  } else {
@@ -96,8 +101,12 @@ function reflipCard() {
     }, 1500);
 }
 
-// using ES6 Destructuring Assignment to set the previously delared constants
-// to valus that will reset the board to a state where no cards have been picked
+// Using ES6 Destructuring Assignment to set the previously delared constants
+// to values that will reset the board to a state where no cards have been picked
+// "The destructuring assignment syntax is a JavaScript expression that makes
+// it possible to unpack values from arrays, or properties from objects, into
+// distinct variables." (source: https://developer.mozilla.org/en-US/docs/Web
+// /JavaScript/Reference/Operators/Destructuring_assignment)
 function boardReset() {
     [pickedCard, cardsLocked] = [false, false];
     [cardOne, cardTwo] = [null, null];
@@ -129,7 +138,7 @@ location.reload();
 })
 
 function win () {
-if (cardOne.classList("") === "flip" && cardTwo.classList("") === "flip") {
+if (document.querySelectorAll(cardOne.card === "flip")) {
     console.log("win");
     }
 }
