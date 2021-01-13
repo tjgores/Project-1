@@ -34,8 +34,6 @@ function pickCard() {
             // default value ("true") is the value of the constant
             //  "pickedCard", then set the constant to "true".
             pickedCard = true;
-             // "this" is dynamically set according to the context.
-             // In this case
             console.log(this);
             cardOne = this;
             // console.log({pickedCard, cardOne});
@@ -114,10 +112,10 @@ function boardReset() {
 })();
 
 // Using the "".forEach" command to loop through the list of the html class
-// ".card" elements which were stored within the constant "cardFaces" which
-// was defined in the first line of code. Then attach (with "=>"") an event
-// listener with "addEventListener" to each of the cards and whenever that 
-// "click" event is heard then execute the "pickCard" function.
+// ".card" elements which were stored within the array constant "cardFaces"
+// whcih was defined in the first line of code. Then attach (with "=>"") an
+// event listener with "addEventListener" to each of the cards and whenever
+// that "click" event is heard then execute the "pickCard" function.
 cardFaces.forEach(card => card.addEventListener("click", pickCard));
 
 // Resetting the game with the "reset" button. Note: this does not keep
