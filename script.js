@@ -38,7 +38,7 @@ function pickCard() {
             cardOne = this;
             // console.log({pickedCard, cardOne});
         } else {
-            // card clicked for second time
+            // card clicked for second time, "this" click event
             cardTwo = this;
             console.log({cardOne, cardTwo, pickedCard});
             // matching card test
